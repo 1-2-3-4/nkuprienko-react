@@ -2,35 +2,21 @@ import React from 'react';
 
 class Footer extends React.Component {
 
-    constructor(props) {
-        super(props);
-
-        this.props = {
-            footerLinks: [
-                {
-                    link: "http://codepen.io/nicode/",
-                    iconClass: "codepen"
-                },
-                {
-                    link: "https://github.com/1-2-3-4",
-                    iconClass: "github"
-                },
-                {
-                    link: "https://www.linkedin.com/in/nicole-kuprienko-3954b760",
-                    iconClass: "linkedin"
-                }
-            ]
-        }
-    }
-
-    createIconLink(link, iconClass) {
-        return (
-            <li>
-                <a href={link} target="_blank">
-                    <i className={`fa fa-${iconClass}`}></i>
-                </a>
-            </li>
-        )
+    static defaultProps = {
+        footerLinks: [
+            {
+                link: "http://codepen.io/nicode/",
+                iconClass: "codepen"
+            },
+            {
+                link: "https://github.com/1-2-3-4",
+                iconClass: "github"
+            },
+            {
+                link: "https://www.linkedin.com/in/nicole-kuprienko-3954b760",
+                iconClass: "linkedin"
+            }
+        ]
     }
 
     render() {
@@ -41,7 +27,13 @@ class Footer extends React.Component {
                 <ul>
                     {
                         footerLinks.map((footer, index) => {
-                            return this.createIconLink(footer.link, footer.iconClass);
+                            return (
+                                <li>
+                                    <a href={footer.link} target="_blank">
+                                        <i className={`fa fa-${footer.iconClass}`}></i>
+                                    </a>
+                                </li>
+                            )
                         })
                     }
                 </ul>
