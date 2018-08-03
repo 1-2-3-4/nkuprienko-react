@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import Nav from './Nav';
-import Contact from './components/Contact'
+import Projects from './components/Projects';
+import Archive from './components/Archive';
+import Contact from './components/Contact';
 import Footer from './Footer';
-import './App.css';
 
 class App extends Component {
   static defaultProps = {
@@ -34,6 +35,9 @@ class App extends Component {
         <Nav />
         <Router>
           <Switch>
+            <Route exact path="/" component={ Projects } />
+            <Route exact path="/projects" component={ Projects } />
+            <Route exact path="/archive" component={ Archive } />
             <Route exact path="/contact" render={(props) => <Contact externalLinks={ this.props.externalLinks } />} />
           </Switch>
         </Router>

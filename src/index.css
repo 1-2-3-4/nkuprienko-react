@@ -104,6 +104,8 @@ textarea {
 body {
   overflow-x: hidden;
   margin: 0; }
+  body * {
+    box-sizing: border-box; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'overpass-bold', Arial, sans-serif; }
@@ -117,7 +119,7 @@ h1, h2, h3, h4, h5, h6 {
 section p {
   font-family: Arial, sans-serif; }
 
-.fun.main,
+.projects.main,
 .contact.main {
   width: 60%;
   max-width: 800px; }
@@ -141,75 +143,17 @@ footer {
       footer ul li a:hover {
         color: #FC7777; }
 
-/* Carousel styling */
-.slider {
-  position: relative;
+/* Header styling */
+header {
   display: block;
-  min-height: 450px;
-  overflow: hidden; }
-
-.slider:hover {
-  cursor: pointer; }
-
-.slide {
+  min-height: 350px;
+  overflow: hidden;
   text-align: center;
   padding: 50px;
-  position: absolute;
   background-color: #ccc;
-  width: calc(100% - 100px);
-  display: none;
-  z-index: 1;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+  width: 100%;
   background: url("img/tech-pattern2.png") repeat;
   background-size: 40%; }
-
-.slide.active {
-  display: block;
-  z-index: 3;
-  left: 0; }
-
-.slide.prev {
-  display: block;
-  z-index: 2;
-  left: 0; }
-
-.slide.next {
-  display: block;
-  z-index: 2;
-  left: 100%; }
-
-.slide2 {
-  background-color: pink; }
-
-.slide3 {
-  background-color: yellow; }
-
-.slide4 {
-  background-color: purple; }
-
-#prev, #next {
-  position: absolute;
-  top: 50%;
-  margin-top: -22px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: 0;
-  background-color: transparent;
-  color: #5f5f5f;
-  padding: 0;
-  font-size: 2em;
-  z-index: 4; }
-
-#prev {
-  left: 10px; }
-
-#next {
-  right: 10px; }
 
 h1 {
   margin-top: 0; }
@@ -217,7 +161,7 @@ h1 {
 #me {
   width: 130px;
   background-color: #A9B4E9;
-  padding: 40px 50px;
+  padding: 20px 25px;
   border-radius: 50%; }
 
 /* Main Nav styling */
@@ -243,12 +187,34 @@ nav {
         border-bottom: solid 2px;
         color: #fc7777; }
 
-/* Project Block styling */
-.project {
-  margin-bottom: 100px; }
+/* Archive Block styling */
+.main.archives {
+  text-align: left; }
 
-/* all project imgs */
-.proj-img-container {
+.archive {
+  margin-bottom: 100px; }
+  .archive h2 {
+    text-align: left; }
+
+.archive-holiday-landing-pg {
+  background: url("../src/img/holiday-landing-pg.png"); }
+
+.archive-hoot-art {
+  background: url("../src/img/hootart.png"); }
+
+.archive-formtool {
+  background: url("../src/img/form-tool.png"); }
+
+.archive-championships {
+  background: url("../src/img/20ss-championship.png"); }
+
+.archive-email-popup {
+  background: url("../src/img/email-popup.png"); }
+
+.archive-templates {
+  background: url("../src/img/landing-pg-template.png"); }
+
+.archive-img-container {
   background-color: #ccc;
   display: inline-block;
   width: 70%;
@@ -261,14 +227,14 @@ nav {
   transition: -webkit-filter 1s;
   transition: filter 1s;
   transition: filter 1s, -webkit-filter 1s; }
-  .proj-img-container img {
+  .archive-img-container img {
     width: 100%;
     min-height: 550px; }
 
-.proj-img-container:hover {
+.archive-img-container:hover {
   cursor: pointer; }
 
-.proj-desc-container {
+.archive-desc-container {
   display: inline-block;
   width: 25%;
   padding-left: 4%;
@@ -286,8 +252,8 @@ span.tag {
   color: #5f5f5f; }
 
 /* Button styling */
-.fun-external-link,
-.view-proj {
+.projects-external-link,
+.view-archive {
   display: block;
   width: 100%;
   margin-bottom: 20px;
@@ -306,21 +272,21 @@ span.tag {
   -o-transition: background 0.3s;
   transition: background 0.3s; }
 
-.fun-external-link {
+.projects-external-link {
   width: 40%;
   margin: 0 auto; }
 
-.fun-external-link:hover,
-.view-proj:hover {
+.projects-external-link:hover,
+.view-archive:hover {
   background: linear-gradient(#F9A8A8, #fc7777);
   box-shadow: inset 1px 2px 2px #ECC6C6,  inset -2px -2px 2px #926464;
   text-shadow: -1px -1px 1px #926161; }
 
 /* Fun Page styling */
-.fun-section {
+.projects-section {
   margin-bottom: 100px; }
 
-.fun-container {
+.projects-container {
   width: 100%;
   background: #ccc;
   margin-bottom: 25px;
@@ -350,8 +316,8 @@ span.tag {
     border-radius: 20px;
     margin-bottom: 15px;
     position: relative; }
-  #guessing-container #userGuess {
-    height: 50px;
+  #guessing-container #user-guess {
+    height: 57px;
     position: absolute;
     bottom: 0;
     border: 0;
@@ -363,28 +329,27 @@ span.tag {
     appearance: none;
     border-bottom: #61F1C9 solid 5px;
     width: 100%;
-    width: calc(100% - 2px);
     font-size: 1.1em;
     background-color: #444;
     text-indent: 15px;
     color: #DEDEDE;
     letter-spacing: 1px;
     outline: none; }
-  #guessing-container .computerTxt-container {
+  #guessing-container .computer-text-container {
     display: block; }
-    #guessing-container .computerTxt-container i {
+    #guessing-container .computer-text-container i {
       background-color: #5a5a5a;
       color: #ececec;
       padding: 10px;
       border-radius: 50%;
       font-size: 1.1em; }
-  #guessing-container .computerTxt {
+  #guessing-container .computer-text {
     background-color: #FFDE90;
     text-align: left;
     margin-left: 20px; }
-  #guessing-container .computerTxt.new-color {
+  #guessing-container .computer-text.new-color {
     background-color: #BCDEFB; }
-  #guessing-container .computerTxt::before {
+  #guessing-container .computer-text::before {
     content: '';
     position: absolute;
     width: 0;
@@ -392,22 +357,22 @@ span.tag {
     left: -10px;
     border: 9px solid;
     border-color: transparent transparent #FFDE90; }
-  #guessing-container .computerTxt.new-color::before {
+  #guessing-container .computer-text.new-color::before {
     border-color: transparent transparent #BCDEFB; }
-  #guessing-container .userTxt-container {
+  #guessing-container .player-text-container {
     text-align: right; }
-    #guessing-container .userTxt-container i {
+    #guessing-container .player-text-container i {
       padding: 10px 12px;
       border-radius: 50%;
       font-size: 1.1em;
       margin-right: 5px;
       background-color: #5a5a5a;
       color: #ececec; }
-  #guessing-container .userTxt {
+  #guessing-container .player-text {
     background-color: #61F1C9;
     text-align: right;
     margin-right: 20px; }
-  #guessing-container .userTxt::after {
+  #guessing-container .player-text::after {
     content: '';
     position: absolute;
     width: 0;
@@ -572,7 +537,7 @@ span.tag {
   -o-animation: colorChange 10s infinite;
   animation: colorChange 10s infinite; }
   .contact-img-container img {
-    width: 150px;
+    width: 270px;
     padding: 75px 60px; }
 
 .contact-text-container {
@@ -595,31 +560,31 @@ span.tag {
 
 /* Media Query styling */
 @media screen and (max-width: 950px) {
-  .fun.main,
+  .projects.main,
   .contact.main {
     width: 80%; }
 
   .main {
     padding-top: 30px; }
 
-  .slide {
+  header {
     background-size: 60%; }
 
   .project {
     margin-bottom: 50px; }
 
-  .proj-img-container {
+  .archive-img-container {
     width: 50%;
     height: 425px; }
 
-  .proj-desc-container {
+  .archive-desc-container {
     width: 44%; }
 
   .contact-section {
     max-width: 450px; }
 
   .contact-img-container img {
-    width: 100px;
+    width: 160px;
     padding: 40px 30px; } }
 @media screen and (max-width: 700px) {
   #ttt-wrapper .box-wrapper {
@@ -639,28 +604,28 @@ span.tag {
   #ttt-wrapper p {
     width: 100px; } }
 @media screen and (max-width: 650px) {
-  .slide {
+  header {
     background-size: 80%; }
 
-  .proj-img-container {
+  .archive-img-container {
     height: 300px;
     width: 100%;
     float: none; }
 
-  .proj-desc-container {
+  .archive-desc-container {
     width: auto;
     padding: 0 8%;
     float: none;
     text-align: center; }
-    .proj-desc-container p {
+    .archive-desc-container p {
       text-align: left; }
 
   .contact-img-container {
-    width: 110px;
+    width: 100px;
     float: none;
     margin: 0 auto; }
     .contact-img-container img {
-      width: 70px;
+      width: 100%;
       padding: 25px 20px; }
 
   .contact-text-container {
@@ -669,13 +634,11 @@ span.tag {
     float: none;
     padding-left: 0; }
 
-  .fun-external-link {
+  .project-external-link {
     width: 60%; } }
 @media screen and (max-width: 500px) {
-  .slider {
-    min-height: 300px; }
-
-  .slide {
+  header {
+    min-height: 300px;
     padding: 30px 50px; }
 
   h1 {
@@ -685,7 +648,7 @@ span.tag {
     font-size: 1.25em; }
 
   #me {
-    width: 80px;
+    width: 140px;
     padding: 20px 30px; }
 
   nav ul {
@@ -697,17 +660,17 @@ span.tag {
   .main {
     padding-top: 20px; }
 
-  .proj-img-container {
+  .archive-img-container {
     height: 200px; }
 
-  .proj-desc-container {
+  .archive-desc-container {
     font-size: 0.9em;
     line-height: 1.6; }
 
   .contact-list li {
     font-size: 1em; }
 
-  .fun-external-link {
+  .projects-external-link {
     width: 100%; }
 
   #guessing-text {
@@ -754,7 +717,7 @@ span.tag {
     padding: 3px 7px;
     margin-right: 5px; }
 
-  .proj-desc-container {
+  .archive-desc-container {
     padding: 0 5%; }
 
   footer {
