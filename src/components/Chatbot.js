@@ -8,7 +8,8 @@ class Chatbot extends React.Component {
             numberToGuess: this.generateRandomNumber(),
             messageLog: [{
                 user: 'computer',
-                message: 'I\'m thinking of a number between 1 and 100'
+                message: 'I\'m thinking of a number between 1 and 100',
+                altColor: false
             }],
             altColor: false
         }
@@ -29,10 +30,12 @@ class Chatbot extends React.Component {
                 {
                     user: 'player',
                     message: this.state.value,
+                    altColor: this.state.altColor
                 },
                 {
                     user: 'computer',
                     message: checkForWinText,
+                    altColor: this.state.altColor
                 }
             ];
 
@@ -41,11 +44,13 @@ class Chatbot extends React.Component {
                 messageLogs.push(
                     {
                         user: 'computer',
-                        message: 'Let\'s play again!'
+                        message: 'Let\'s play again!',
+                        altColor: !this.state.altColor
                     },
                     {
                         user: 'computer',
-                        message: 'I\'m thinking of a number between 1 and 100'
+                        message: 'I\'m thinking of a number between 1 and 100',
+                        altColor: !this.state.altColor
                     }
                 );
             }
@@ -94,10 +99,11 @@ class Chatbot extends React.Component {
                     {
                         this.state.messageLog.map((chat, index) => {
                             const fontAwesomeIcon = chat.user === 'computer' ? 'terminal' : 'user';
+                            const altColorClass = chat.altColor ? 'new-color' : '';
                             return (
                                 <div className={`${chat.user}-text-container`}>
                                     <i className={ `fa fa-${fontAwesomeIcon}`}></i>
-                                    <span className={`${chat.user}-text`}>{ chat.message }</span>
+                                    <span className={`${chat.user}-text ${altColorClass}`}>{ chat.message }</span>
                                 </div>
                             )
                         })
