@@ -8,29 +8,23 @@ nav {
 			margin: 0;
 			padding: 0;
 			display: inline-block;
+
+			&:nth-child(2) {
+				margin: 0 50px;
+			}
 		}
 		a {
 			text-decoration: none;
 			display: inline-block;
 			color: #5A5A5A;
 			font-size: 1.2em;
+			border-bottom: solid 2px transparent;
+			
+			&.active,
+			&:hover {
+				border-bottom: solid 2px;
+				color: #fc7777;
+			}
 		}
 	}
-}
-
-.fun-link {
-	margin: 0 50px;
-}
-
-.fun .fun-link,
-.work .work-link,
-.contact .contact-link {
-	color: #6C83F5;
-	border-bottom: solid 2px;
-}
-.fun-link:hover,
-.work-link:hover,
-.contact-link:hover {
-	border-bottom: solid 2px;
-	color: #fc7777;
 }

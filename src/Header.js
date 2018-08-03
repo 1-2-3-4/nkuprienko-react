@@ -8,7 +8,7 @@ class Header extends React.Component {
                 <div className="slide slide1 active">
                     <h1>Nicole Kuprienko</h1>
                     <h2>Front-End Development</h2>
-                    <img id="me" src={logo} alt="selfie" />
+                    <img id="me" src={ logo } alt="selfie" />
                 </div>
             </section>
         )

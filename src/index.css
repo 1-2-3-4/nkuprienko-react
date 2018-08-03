@@ -102,7 +102,8 @@ textarea {
 /* Mixins */
 /* Main Layout styling */
 body {
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  margin: 0; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'overpass-bold', Arial, sans-serif; }
@@ -116,8 +117,8 @@ h1, h2, h3, h4, h5, h6 {
 section p {
   font-family: Arial, sans-serif; }
 
-.fun .main,
-.contact .main {
+.fun.main,
+.contact.main {
   width: 60%;
   max-width: 800px; }
 
@@ -230,26 +231,17 @@ nav {
       margin: 0;
       padding: 0;
       display: inline-block; }
+      nav ul li:nth-child(2) {
+        margin: 0 50px; }
     nav ul a {
       text-decoration: none;
       display: inline-block;
       color: #5A5A5A;
-      font-size: 1.2em; }
-
-.fun-link {
-  margin: 0 50px; }
-
-.fun .fun-link,
-.work .work-link,
-.contact .contact-link {
-  color: #6C83F5;
-  border-bottom: solid 2px; }
-
-.fun-link:hover,
-.work-link:hover,
-.contact-link:hover {
-  border-bottom: solid 2px;
-  color: #fc7777; }
+      font-size: 1.2em;
+      border-bottom: solid 2px transparent; }
+      nav ul a.active, nav ul a:hover {
+        border-bottom: solid 2px;
+        color: #fc7777; }
 
 /* Project Block styling */
 .project {
@@ -585,7 +577,8 @@ span.tag {
 
 .contact-text-container {
   float: left;
-  padding-left: 5%; }
+  padding-left: 5%;
+  text-align: left; }
 
 .contact-list {
   padding: 0;
@@ -602,8 +595,8 @@ span.tag {
 
 /* Media Query styling */
 @media screen and (max-width: 950px) {
-  .fun .main,
-  .contact .main {
+  .fun.main,
+  .contact.main {
     width: 80%; }
 
   .main {
