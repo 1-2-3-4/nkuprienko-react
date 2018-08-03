@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 class Chatbot extends React.Component {
     constructor() {
@@ -16,6 +17,10 @@ class Chatbot extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleKeyDown = this.handleKeyDown.bind(this);
+    }
+
+    componentDidUpdate() {
+        this.handleScrollToElement();
     }
 
     handleChange(event) {
@@ -63,6 +68,8 @@ class Chatbot extends React.Component {
                     numberToGuess: checkForWinBool ? this.generateRandomNumber() : this.state.numberToGuess,
                 };
             });
+
+            this.handleScrollToElement();
         }
     }
 
@@ -82,7 +89,7 @@ class Chatbot extends React.Component {
 
     checkForWin() {
         let messageText;
-        if (this.state.value == this.state.numberToGuess) {
+        if (this.state.value === this.state.numberToGuess) {
             messageText = 'You win! ' + this.generateRandomHappyEmoji();
         } else if (isNaN(this.state.value)) {
             messageText = 'I can only understand numbers ';
@@ -92,18 +99,29 @@ class Chatbot extends React.Component {
         return messageText;
     }
 
+    handleScrollToElement() {
+        const guessingText = ReactDOM.findDOMNode(this.refs.guessingText);
+        guessingText.scrollTop = guessingText.scrollHeight + 100;
+        //guessingText.scrollTo(guessingText.scrollHeight, 350);
+    }
+
     render() {
         return (
             <div id="guessing-container">
-                <div id="guessing-text">
+                <div id="guessing-text" ref="guessingText">
                     {
                         this.state.messageLog.map((chat, index) => {
-                            const fontAwesomeIcon = chat.user === 'computer' ? 'terminal' : 'user';
+                            const computerUser = chat.user === 'computer' ;
+                            const fontAwesomeIcon = computerUser ? 'terminal' : 'user';
+                            const icon = <i className={ `fa fa-${fontAwesomeIcon}` } key={ `icon-${index}` }></i>;
                             const altColorClass = chat.altColor ? 'new-color' : '';
                             return (
-                                <div className={`${chat.user}-text-container`}>
-                                    <i className={ `fa fa-${fontAwesomeIcon}`}></i>
-                                    <span className={`${chat.user}-text ${altColorClass}`}>{ chat.message }</span>
+                                <div className={ `${chat.user}-text-container` } key={ `container-${index} `}>
+                                    { computerUser && icon }
+                                    <span className={ `${chat.user}-text ${altColorClass}` } key={ `chat-${index}` }>
+                                        { chat.message }
+                                    </span>
+                                    { !computerUser && icon }
                                 </div>
                             )
                         })
