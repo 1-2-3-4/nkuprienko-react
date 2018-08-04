@@ -69,7 +69,6 @@ class Chatbot extends React.Component {
                 };
             });
 
-            this.handleScrollToElement();
         }
     }
 
