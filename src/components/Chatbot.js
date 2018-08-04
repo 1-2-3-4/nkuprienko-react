@@ -101,7 +101,7 @@ class Chatbot extends React.Component {
 
     handleScrollToElement() {
         const guessingText = ReactDOM.findDOMNode(this.refs.guessingText);
-        guessingText.scrollTop = guessingText.scrollHeight + 100;
+        guessingText.scrollTop = guessingText.scrollHeight;
         //guessingText.scrollTo(guessingText.scrollHeight, 350);
     }
 
