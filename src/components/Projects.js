@@ -1,7 +1,23 @@
 import React from 'react';
 import Chatbot from './Chatbot';
+import Tictactoe from './Tictactoe';
 
 class Projects extends React.Component {
+    static defaultProps = {
+        projects: [
+            {
+                name: 'Guessing Game',
+                component: 'Chatbot',
+                //link: 'http://codepen.io/nicode/pen/rxvwJL'
+            },
+            {
+                name: 'Tic Tac Toe',
+                component: 'Tictactoe',
+                //link: 'http://codepen.io/nicode/pen/EPpmZp'
+            }
+        ]
+    }
+
     render() {
         return (
                 <div className="main projects">
@@ -10,16 +26,7 @@ class Projects extends React.Component {
                         <div className="projects-container">
                             <Chatbot />
                         </div>
-                        <a className="projects-external-link" href="http://codepen.io/nicode/pen/rxvwJL" target="_blank"><i className="fa fa-codepen"></i>&nbsp;View on CodePen</a>
                     </section>
-                    <section className="fun-section">
-                        <h2>Tic Tac Toe</h2>
-                        <div className="fun-container">
-                            
-                        </div>
-                        <a className="fun-external-link" href="http://codepen.io/nicode/pen/EPpmZp" target="_blank"><i className="fa fa-codepen"></i>&nbsp;View on CodePen</a>
-                    </section>
-
                 </div>
         )
     }

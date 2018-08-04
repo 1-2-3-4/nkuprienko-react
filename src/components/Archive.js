@@ -1,4 +1,5 @@
 import React from 'react';
+import championships from '../img/championships.pdf';
 
 class Archive extends React.Component {
     static defaultProps = {
@@ -38,7 +39,7 @@ class Archive extends React.Component {
             {
                 name: 'Championship Site - Twenty Sided Store',
                 imageClass: 'archive-championships',
-                link: '../img/championships.pdf',
+                link: championships,
                 description: 'Design for Championship Tournament site at Twenty Sided Store in Brooklyn.',
                 tags: ['Design', 'Illustration'],
                 view: 'PDF'

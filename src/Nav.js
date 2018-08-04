@@ -13,7 +13,7 @@ class Nav extends React.Component {
             },
             {
                 displayName: 'contact',
-                link: 'contact'
+                link: '/contact'
             }
         ]
     }
@@ -21,7 +21,7 @@ class Nav extends React.Component {
     constructor(props) {
         super(props);
         // set initial active link to first link in props array
-        this.state = { activeLink: this.props.navLinks[0].displayName };
+        this.state = { pathname: window.location.pathname };
     }
 
     render() {
@@ -31,7 +31,7 @@ class Nav extends React.Component {
                 <ul>
                     {
                         navLinks.map((nav, index) => {
-                            const active = this.state.activeLink === nav.displayName ? ' active' : '';
+                            const active = this.state.pathname === nav.link ? ' active' : '';
                             return (
                                 <li key={ index }>
                                     <a 

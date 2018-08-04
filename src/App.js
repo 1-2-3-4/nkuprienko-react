@@ -11,11 +11,6 @@ class App extends Component {
   static defaultProps = {
       externalLinks: [
           {
-              link: "http://codepen.io/nicode/",
-              displayName: "CodePen",
-              iconClass: "codepen"
-          },
-          {
               link: "https://github.com/1-2-3-4",
               displayName: "GitHub",
               iconClass: "github"
@@ -33,16 +28,17 @@ class App extends Component {
       <div className="App">
         <Header />
         <Nav />
-        <Router>
-          <Switch>
-            <Route exact path="/" component={ Projects } />
-            <Route exact path="/projects" component={ Projects } />
-            <Route exact path="/archive" component={ Archive } />
-            <Route exact path="/contact" render={(props) => <Contact externalLinks={ this.props.externalLinks } />} />
-          </Switch>
-        </Router>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={ Projects } />
+              <Route exact path="/projects" component={ Projects } />
+              <Route exact path="/archive" component={ Archive } />
+              <Route exact path="/contact" render={(props) => <Contact externalLinks={ this.props.externalLinks } />} />
+              <Route exact path="/demos/email-popup.html" />} />
+            </Switch>
+          </Router>
         <Footer externalLinks={ this.props.externalLinks } />
-      </div>
+      </div>       
     );
   }
 }
