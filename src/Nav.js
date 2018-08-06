@@ -5,7 +5,8 @@ class Nav extends React.Component {
         navLinks: [
             {
                 displayName: 'projects',
-                link: '/projects'
+                link: '/projects',
+                altLink: '/'
             },
             {
                 displayName: 'archive',
@@ -26,12 +27,13 @@ class Nav extends React.Component {
 
     render() {
         const { navLinks } = this.props;
+        const { pathname } = this.state;
         return (
             <nav>
                 <ul>
                     {
                         navLinks.map((nav, index) => {
-                            const active = this.state.pathname === nav.link ? ' active' : '';
+                            const active = pathname === nav.link || pathname === nav.altLink ? ' active' : '';
                             return (
                                 <li key={ index }>
                                     <a 

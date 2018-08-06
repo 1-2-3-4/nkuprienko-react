@@ -7,13 +7,11 @@ class Projects extends React.Component {
         projects: [
             {
                 name: 'Guessing Game',
-                component: 'Chatbot',
-                //link: 'http://codepen.io/nicode/pen/rxvwJL'
+                component: 'Chatbot'
             },
             {
                 name: 'Tic Tac Toe',
-                component: 'Tictactoe',
-                //link: 'http://codepen.io/nicode/pen/EPpmZp'
+                component: 'Tictactoe'
             }
         ]
     }
