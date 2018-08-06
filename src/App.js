@@ -29,7 +29,7 @@ class App extends Component {
         <Header />
           <BrowserRouter>
             <div>
-              <Nav />
+              <Nav location={ window.location.pathname } />
               <Switch>
                 <Route exact path="/" component={ Projects } />
                 <Route exact path="/projects" component={ Projects } />

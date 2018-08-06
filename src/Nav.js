@@ -23,7 +23,16 @@ class Nav extends React.Component {
     constructor(props) {
         super(props);
         // set initial active link to first link in props array
-        this.state = { pathname: window.location.pathname };
+        this.state = { 
+            pathname: window.location.pathname
+        };
+        this.updateLinks = this.updateLinks.bind(this);
+    }
+
+    updateLinks(link) {
+        this.setState({
+            pathname: link
+        });
     }
 
     render() {
@@ -41,7 +50,7 @@ class Nav extends React.Component {
                                         className={ `${nav.displayName}-link ${active}` } 
                                         to={ nav.link }
                                         key={ index }
-                                        onClick={ () => this.setState({ activeLink: nav.displayName }) }
+                                        onClick={ () => this.updateLinks(nav.link) }
                                     >
                                         { nav.displayName }
                                     </Link>
