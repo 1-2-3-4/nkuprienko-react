@@ -7,7 +7,7 @@ class Archive extends React.Component {
             {
                 name: 'Hoot Art Gallery',
                 imageClass: 'archive-hoot-art',
-                link: 'http://www.hootartgallery.com/',
+                link: 'http://1-2-3-4.github.io/demos/hootartgallery/index.html',
                 description: 'Design and Development for a New Mexico gallery website.',
                 tags: ['HTML', 'CSS', 'JS', 'PHP', 'Flex Box', 'Design', 'Responsive', 'Logo Design'],
                 view: 'Demo'
@@ -31,7 +31,7 @@ class Archive extends React.Component {
             {
                 name: 'Internal Tool Redesign - Macmillan',
                 imageClass: 'archive-formtool',
-                link: 'http://1-2-3-4.github.io/demos/form-homepg.php',
+                link: 'http://1-2-3-4.github.io/demos/form-homepg.html',
                 description: 'Redesign of an internal marketing tool used to generate email sign-up forms, legal language for sweepstakes, Google Analytics event tracking, etc. Waterflow workflow with back-end developer working in ASP.NET. All sensitive data and back-end functionality has been removed from the Demo.',
                 tags: ['HTML', 'CSS', 'JS', 'Design', 'Flex Box', 'Prototype'],
                 view: 'Demo'

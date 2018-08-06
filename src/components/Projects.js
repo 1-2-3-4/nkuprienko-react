@@ -25,6 +25,12 @@ class Projects extends React.Component {
                             <Chatbot />
                         </div>
                     </section>
+                    <section className="projects-section">
+                        <h2>Tic Tac Toe</h2>
+                        <div className="projects-container">
+                            <Tictactoe />
+                        </div>
+                    </section>
                 </div>
         )
     }
