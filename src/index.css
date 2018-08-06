@@ -536,7 +536,7 @@ span.tag {
   -moz-animation: colorChange 10s infinite;
   -o-animation: colorChange 10s infinite;
   animation: colorChange 10s infinite; }
-  .contact-img-container img {
+  .contact-img-container .envelope {
     width: 270px;
     padding: 75px 60px; }
 
@@ -624,7 +624,7 @@ span.tag {
     width: 100px;
     float: none;
     margin: 0 auto; }
-    .contact-img-container img {
+    .contact-img-container .envelope {
       width: 100%;
       padding: 25px 20px; }
 

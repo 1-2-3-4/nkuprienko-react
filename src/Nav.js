@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 class Nav extends React.Component {
     static defaultProps = {
@@ -36,14 +37,14 @@ class Nav extends React.Component {
                             const active = pathname === nav.link || pathname === nav.altLink ? ' active' : '';
                             return (
                                 <li key={ index }>
-                                    <a 
+                                    <Link 
                                         className={ `${nav.displayName}-link ${active}` } 
-                                        href={ nav.link }
+                                        to={ nav.link }
                                         key={ index }
                                         onClick={ () => this.setState({ activeLink: nav.displayName }) }
                                     >
                                         { nav.displayName }
-                                    </a>
+                                    </Link>
                                 </li>
                             )
                         })

@@ -1,5 +1,5 @@
 import React from 'react';
-import envelope from '../img/envelope.svg';
+import Envelope from '../img/envelope.svg';
 
 class Contact extends React.Component {
     render() {
@@ -9,7 +9,7 @@ class Contact extends React.Component {
                 <section className="contact-section clearfix">
                     
                     <div className="contact-img-container">
-                        <img src={ envelope } alt="envelope" />
+                        <Envelope className="envelope" />
                     </div>
                     <div className="contact-text-container">
                         <h2>Contact</h2>

@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const InterpolateHtmlPlugin = require('interpolate-html-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -14,10 +15,19 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+        inject: true,
+        template: './public/index.html',
+      }),
+    new InterpolateHtmlPlugin({
+      PUBLIC_URL: ''
+      // You can pass any key-value pairs, this was just an example.
+      // WHATEVER: 42 will replace %WHATEVER% with 42 in index.html.
+    }),
   ],
   devServer: {
-    contentBase: './dist',
+    contentBase: path.join(__dirname, "dist"),
+    historyApiFallback: true,
     inline: true,
     hot: true,
     port: 3000
@@ -35,7 +45,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|eot|woff|woff2|ttf|pdf)$/,
-        exclude: /\.ejs$/,
+        exclude: /\.(js|jsx|ejs)$/,
         use: [
           {
             loader: 'file-loader',
@@ -67,6 +77,10 @@ module.exports = {
       {
         test:/\.css$/,
         use:[
+          {
+            loader: 'style-loader',
+            options: {}
+          },
           {
             loader: 'css-loader',
             options: {}
