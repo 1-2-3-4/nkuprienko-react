@@ -15,7 +15,7 @@ class Archive extends React.Component {
             {
                 name: 'Email Sign-up Pop-ups - Macmillan',
                 imageClass: 'archive-email-popup',
-                link: 'demos/email-popup.html',
+                link: 'http://1-2-3-4.github.io/demos/email-popup.html',
                 description: 'Design and development for email sign-up forms on the US Macmillan corporate site by genre. All sensitive data and back-end functionality has been removed from the Demo.',
                 tags: ['HTML', 'CSS', 'JS', 'Flex Box', 'Design', 'Responsive'],
                 view: 'Demo'
@@ -31,7 +31,7 @@ class Archive extends React.Component {
             {
                 name: 'Internal Tool Redesign - Macmillan',
                 imageClass: 'archive-formtool',
-                link: 'demos/form-homepg.php',
+                link: 'http://1-2-3-4.github.io/demos/form-homepg.php',
                 description: 'Redesign of an internal marketing tool used to generate email sign-up forms, legal language for sweepstakes, Google Analytics event tracking, etc. Waterflow workflow with back-end developer working in ASP.NET. All sensitive data and back-end functionality has been removed from the Demo.',
                 tags: ['HTML', 'CSS', 'JS', 'Design', 'Flex Box', 'Prototype'],
                 view: 'Demo'
