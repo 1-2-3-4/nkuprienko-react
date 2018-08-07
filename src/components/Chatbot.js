@@ -88,7 +88,7 @@ class Chatbot extends React.Component {
 
     checkForWin() {
         let messageText;
-        if (this.state.value === this.state.numberToGuess) {
+        if (this.state.value == this.state.numberToGuess) {
             messageText = 'You win! ' + this.generateRandomHappyEmoji();
         } else if (isNaN(this.state.value)) {
             messageText = 'I can only understand numbers ';

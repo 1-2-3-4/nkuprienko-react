@@ -92,8 +92,8 @@ class Tictactoe extends React.Component {
 		const { boardState, isHovered, playerTurn1, winner, player1wins, player2wins } = this.state;
 		return (
 			<div id="ttt-wrapper">
-				<p>Player 1: <span className="player1-num-wins">{ player1wins }</span></p>
-				<p>Player 2: <span className="player2-num-wins">{ player2wins }</span></p>
+				<p>Player One: <span className="player1-num-wins">{ player1wins }</span></p>
+				<p>Player Two: <span className="player2-num-wins">{ player2wins }</span></p>
 				<div className="box-wrapper">
 				{
 					boardState.map((square, index) => {
@@ -124,7 +124,7 @@ class Tictactoe extends React.Component {
 				</div>
 				{ winner &&
 					<div className={ `win-msg ${winner}-wins-msg` }>
-						<h3>{winner === 'player1' ? 'Player 1' : 'Player 2'} wins!</h3>
+						<h3>{winner === 'player1' ? 'Player One' : 'Player Two'} wins!</h3>
 						<button onClick={ () => this.handlePlayAgain() }>
 							<i className="fa fa-refresh"></i>&nbsp;play again
 						</button>
