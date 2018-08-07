@@ -83,7 +83,7 @@ class Tictactoe extends React.Component {
 		this.setState({
 			winner: '',
 			boardState: Array(9).fill(''),
-			playerTurn1: true,
+			playerTurn1: !this.state.playerTurn1,
 			turn: 0
 		})
 	}
