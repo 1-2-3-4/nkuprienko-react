@@ -420,10 +420,10 @@ span.tag {
       top: 0;
       left: 0;
       text-shadow: 3px -6px 0px #3F3E3E, 2px -4px 0px #3F3E3E, 1px -2px 0px #3F3E3E; }
-    #ttt-wrapper .box span.computer {
+    #ttt-wrapper .box span.player2 {
       margin-left: 35px;
       color: #BCDEFB; }
-    #ttt-wrapper .box span.player {
+    #ttt-wrapper .box span.player1 {
       margin-left: 42px;
       color: #FFDE90; }
   #ttt-wrapper .box:nth-child(3),
@@ -440,9 +440,9 @@ span.tag {
     letter-spacing: 1px;
     width: 150px;
     display: inline-block; }
-  #ttt-wrapper .player-num-wins {
+  #ttt-wrapper .player1-num-wins {
     color: #FFDE90; }
-  #ttt-wrapper .computer-num-wins {
+  #ttt-wrapper .player2-num-wins {
     color: #BCDEFB; }
   #ttt-wrapper .open:hover {
     cursor: pointer; }
@@ -451,7 +451,6 @@ span.tag {
   #ttt-wrapper .permanent {
     display: block; }
   #ttt-wrapper .win-msg {
-    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -468,13 +467,14 @@ span.tag {
       padding: 10px 15px;
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
       border: 0;
-      border-radius: 8px; }
+      border-radius: 8px;
+      cursor: pointer; }
     #ttt-wrapper .win-msg button:hover {
       background-color: #f9f9f9;
       color: #545454; }
-  #ttt-wrapper .player-wins-msg {
+  #ttt-wrapper .player1-wins-msg {
     background-color: rgba(245, 222, 144, 0.8); }
-  #ttt-wrapper .computer-wins-msg {
+  #ttt-wrapper .player2-wins-msg {
     background-color: rgba(188, 222, 250, 0.7); }
 
 /* Contact Page - animations */

@@ -101,15 +101,15 @@ class Chatbot extends React.Component {
     handleScrollToElement() {
         const guessingText = ReactDOM.findDOMNode(this.refs.guessingText);
         guessingText.scrollTop = guessingText.scrollHeight;
-        //guessingText.scrollTo(guessingText.scrollHeight, 350);
     }
 
     render() {
+        const { messageLog } = this.state;
         return (
             <div id="guessing-container">
                 <div id="guessing-text" ref="guessingText">
                     {
-                        this.state.messageLog.map((chat, index) => {
+                        messageLog.map((chat, index) => {
                             const computerUser = chat.user === 'computer' ;
                             const fontAwesomeIcon = computerUser ? 'terminal' : 'user';
                             const icon = <i className={ `fa fa-${fontAwesomeIcon}` } key={ `icon-${index}` }></i>;

@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const InterpolateHtmlPlugin = require('interpolate-html-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -19,11 +18,6 @@ module.exports = {
         inject: true,
         template: './public/index.html',
       }),
-    new InterpolateHtmlPlugin({
-      PUBLIC_URL: ''
-      // You can pass any key-value pairs, this was just an example.
-      // WHATEVER: 42 will replace %WHATEVER% with 42 in index.html.
-    }),
   ],
   devServer: {
     contentBase: path.join(__dirname, "dist"),

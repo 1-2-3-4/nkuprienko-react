@@ -31,11 +31,11 @@
             left: 0;
             text-shadow: 3px -6px 0px #3F3E3E, 2px -4px 0px #3F3E3E, 1px -2px 0px #3F3E3E;
         }
-        span.computer {
+        span.player2 {
             margin-left: 35px;
             color: #BCDEFB;
         }
-        span.player {
+        span.player1 {
             margin-left: 42px;
             color: #FFDE90;
         }
@@ -56,10 +56,10 @@
         width: 150px;
         display: inline-block;
     }
-    .player-num-wins {
+    .player1-num-wins {
         color: #FFDE90;
     }
-    .computer-num-wins {
+    .player2-num-wins {
         color: #BCDEFB;
     }
     .open:hover {
@@ -72,7 +72,6 @@
         display: block;
     }
     .win-msg {
-        display: none;
         position: absolute;
         top: 0;
         left: 0;
@@ -91,16 +90,17 @@
             box-shadow: 5px 5px 10px rgba(0,0,0,0.25);
             border: 0;
             border-radius: 8px;
+            cursor: pointer;
         }
         button:hover {
             background-color: #f9f9f9;
             color: #545454;
         }
     }
-    .player-wins-msg {
+    .player1-wins-msg {
         background-color: rgba(245,222,144,0.8);
     }
-    .computer-wins-msg {
+    .player2-wins-msg {
         background-color: rgba(188,222,250,0.7);
     }
 }
