@@ -3,18 +3,6 @@ import Chatbot from './Chatbot';
 import Tictactoe from './Tictactoe';
 
 class Projects extends React.Component {
-    static defaultProps = {
-        projects: [
-            {
-                name: 'Guessing Game',
-                component: 'Chatbot'
-            },
-            {
-                name: 'Tic Tac Toe',
-                component: 'Tictactoe'
-            }
-        ]
-    }
 
     render() {
         return (
