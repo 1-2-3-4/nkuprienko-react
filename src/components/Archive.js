@@ -60,11 +60,13 @@ class Archive extends React.Component {
                                 <div className="archive-desc-container" key={ `desc-${index}` }>
                                     <p key={ `p-${index}` }>{ archive.description }</p>
                                     <a className="view-archive" href={ archive.link } target="_blank" key={ `btn-${index}` }>View { archive.view }</a>
+                                    <div class="tag-container">
                                     {
                                         archive.tags.map((tagName, index) => {
                                             return <span className="tag" key={ `tag-${index}` }>{ tagName }</span>
                                         })
                                     }
+                                    </div>
                                 </div>
                             </section>
                         )

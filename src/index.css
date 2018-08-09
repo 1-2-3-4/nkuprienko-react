@@ -240,6 +240,13 @@ nav {
   padding-left: 4%;
   float: right; }
 
+.tag-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
 span.tag {
   display: inline-block;
   padding: 5px 10px;
@@ -249,7 +256,11 @@ span.tag {
   margin-bottom: 10px;
   letter-spacing: 1px;
   font-size: 0.8em;
-  color: #5f5f5f; }
+  text-align: center;
+  color: #5f5f5f;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1; }
 
 /* Button styling */
 .projects-external-link,
@@ -416,15 +427,17 @@ span.tag {
     #ttt-wrapper .box span {
       position: absolute;
       font-size: 100px;
-      line-height: 145px;
-      top: 0;
+      width: 100%;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
       left: 0;
       text-shadow: 3px -6px 0px #3F3E3E, 2px -4px 0px #3F3E3E, 1px -2px 0px #3F3E3E; }
     #ttt-wrapper .box span.player2 {
-      margin-left: 35px;
       color: #BCDEFB; }
     #ttt-wrapper .box span.player1 {
-      margin-left: 42px;
       color: #FFDE90; }
   #ttt-wrapper .box:nth-child(3),
   #ttt-wrapper .box:nth-child(6),
@@ -459,7 +472,8 @@ span.tag {
     #ttt-wrapper .win-msg h3 {
       font-size: 1.75em;
       margin-top: 30%;
-      margin-bottom: 35px; }
+      margin-bottom: 35px;
+      color: #545454; }
     #ttt-wrapper .win-msg button {
       background-color: #545454;
       color: #f9f9f9;
@@ -473,9 +487,11 @@ span.tag {
       background-color: #f9f9f9;
       color: #545454; }
   #ttt-wrapper .player1-wins-msg {
-    background-color: rgba(245, 222, 144, 0.8); }
+    background-color: rgba(245, 222, 144, 0.9); }
   #ttt-wrapper .player2-wins-msg {
-    background-color: rgba(188, 222, 250, 0.7); }
+    background-color: rgba(188, 222, 250, 0.8); }
+  #ttt-wrapper .tie-wins-msg {
+    background-color: rgba(230, 231, 232, 0.8); }
 
 /* Contact Page - animations */
 @-webkit-keyframes colorChange {
@@ -595,12 +611,7 @@ span.tag {
     margin-right: 20px;
     margin-bottom: 20px; }
     #ttt-wrapper .box span {
-      font-size: 75px;
-      line-height: 100px; }
-    #ttt-wrapper .box span.computer {
-      margin-left: 20px; }
-    #ttt-wrapper .box span.player {
-      margin-left: 22px; }
+      font-size: 75px; }
   #ttt-wrapper p {
     width: 100px; } }
 @media screen and (max-width: 650px) {
@@ -635,7 +646,11 @@ span.tag {
     padding-left: 0; }
 
   .project-external-link {
-    width: 60%; } }
+    width: 60%; }
+
+  #guessing-container .computer-text,
+  #guessing-contaienr .player-text {
+    max-width: calc(100% - 60px); } }
 @media screen and (max-width: 500px) {
   header {
     min-height: 300px;
@@ -691,9 +706,7 @@ span.tag {
     margin-bottom: 15px; }
     #ttt-wrapper .box span {
       font-size: 50px;
-      line-height: 75px; }
-    #ttt-wrapper .box span.computer {
-      margin-left: 18px; }
+      margin-top: 0.05em; }
   #ttt-wrapper p {
     padding: 8px; }
   #ttt-wrapper .win-msg h3 {
@@ -732,12 +745,7 @@ span.tag {
     margin-bottom: 10px; }
     #ttt-wrapper .box span {
       font-size: 30px;
-      line-height: 60px;
       text-shadow: 1px -3px 0px #3F3E3E, 2px -4px 0px #3F3E3E, 1px -2px 0px #3F3E3E; }
-    #ttt-wrapper .box span.computer {
-      margin-left: 18px; }
-    #ttt-wrapper .box span.player {
-      margin-left: 20px; }
   #ttt-wrapper p {
     font-size: 0.8em;
     padding: 6px; } }

@@ -28,7 +28,7 @@ class Chatbot extends React.Component {
     }
 
     handleKeyDown(e) {
-        if (e.keyCode === 13) {
+        if (e.keyCode === 13 && this.state.value.trim() !== '') {
             const checkForWinText = this.checkForWin();
             const checkForWinBool = checkForWinText.indexOf('You win!') > -1;
             const messageLogs = [
@@ -88,6 +88,7 @@ class Chatbot extends React.Component {
 
     checkForWin() {
         let messageText;
+
         if (this.state.value == this.state.numberToGuess) {
             messageText = 'You win! ' + this.generateRandomHappyEmoji();
         } else if (isNaN(this.state.value)) {
@@ -95,6 +96,7 @@ class Chatbot extends React.Component {
         } else {
             messageText = 'Too ' + (this.state.value > this.state.numberToGuess ? 'high' : 'low') + '! Guess again';
         }
+
         return messageText;
     }
 

@@ -26,17 +26,19 @@
         span {
             position: absolute;
             font-size: 100px;
-            line-height: 145px;
-            top: 0;
+            width: 100%;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
             left: 0;
             text-shadow: 3px -6px 0px #3F3E3E, 2px -4px 0px #3F3E3E, 1px -2px 0px #3F3E3E;
         }
         span.player2 {
-            margin-left: 35px;
             color: #BCDEFB;
         }
         span.player1 {
-            margin-left: 42px;
             color: #FFDE90;
         }
     }
@@ -81,6 +83,7 @@
             font-size: 1.75em;
             margin-top: 30%;
             margin-bottom: 35px;
+            color: #545454;
         }
         button {
             background-color: #545454;
@@ -98,9 +101,12 @@
         }
     }
     .player1-wins-msg {
-        background-color: rgba(245,222,144,0.8);
+        background-color: rgba(245,222,144,0.9);
     }
     .player2-wins-msg {
-        background-color: rgba(188,222,250,0.7);
+        background-color: rgba(188,222,250,0.8);
+    }
+    .tie-wins-msg {
+        background-color: rgba(230, 231, 232, 0.8)
     }
 }

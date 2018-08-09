@@ -12,7 +12,12 @@ class Tictactoe extends React.Component {
 			turn: 0,
 			winner: '',
 			player1wins: 0,
-			player2wins: 0
+			player2wins: 0,
+			winnerMap: {
+				player1: 'Player One wins',
+				player2: 'Player Two wins',
+				tie: 'Stalemate'
+			}
 		};
 
 		this.handleMouseEnter = this.handleMouseEnter.bind(this);
@@ -54,10 +59,12 @@ class Tictactoe extends React.Component {
 			for (let i = 0; i < 3; i++) {
 				if (boardState[i * 3] &&
 					(boardState[i * 3] === boardState[(i * 3) + 1] && boardState[i * 3] === boardState[(i * 3) + 2])) {
+					// checked rows
 					winner = boardState[i * 3];
 					break;
 				} else if (boardState[i] &&
 					(boardState[i] === boardState[i + 3] && boardState[i] === boardState[i + 6])) {
+					// checked diagonals
 					winner = boardState[i];
 					break;
 				}
@@ -77,6 +84,14 @@ class Tictactoe extends React.Component {
 				player2wins: winner === 'player2' ? this.state.player2wins + 1 : this.state.player2wins
 			})
 		}
+
+		// check for tie
+		const emptySquares = boardState.filter(a => a === '').length;
+		if (!winner && emptySquares === 0) {
+			this.setState({
+				winner: 'tie'
+			})
+		}
 	}
 
 	handlePlayAgain() {
@@ -89,7 +104,7 @@ class Tictactoe extends React.Component {
 	}
 
 	render() {
-		const { boardState, isHovered, playerTurn1, winner, player1wins, player2wins } = this.state;
+		const { boardState, isHovered, playerTurn1, winner, player1wins, player2wins, winnerMap } = this.state;
 		return (
 			<div id="ttt-wrapper">
 				<p>Player One: <span className="player1-num-wins">{ player1wins }</span></p>
@@ -124,7 +139,7 @@ class Tictactoe extends React.Component {
 				</div>
 				{ winner &&
 					<div className={ `win-msg ${winner}-wins-msg` }>
-						<h3>{winner === 'player1' ? 'Player One' : 'Player Two'} wins!</h3>
+						<h3>{ `${winnerMap[winner]}!` }</h3>
 						<button onClick={ () => this.handlePlayAgain() }>
 							<i className="fa fa-refresh"></i>&nbsp;play again
 						</button>

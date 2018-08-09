@@ -39,13 +39,6 @@
             margin-bottom: 20px;
             span {
                 font-size: 75px;
-                line-height: 100px;
-            }
-            span.computer {
-                margin-left: 20px;
-            }
-            span.player {
-                margin-left: 22px;
             }
         }
         p {
@@ -89,6 +82,10 @@
     }
     .project-external-link {
         width: 60%;
+    }
+    #guessing-container .computer-text,
+    #guessing-contaienr .player-text {
+        max-width: calc(100% - 60px);
     }
 }
 
@@ -150,10 +147,7 @@
             margin-bottom: 15px;
             span {
                 font-size: 50px;
-                line-height: 75px;
-            }
-            span.computer {
-                margin-left: 18px;
+                margin-top: 0.05em;
             }
         }
         p {
@@ -204,14 +198,7 @@
             margin-bottom: 10px;
             span {
                 font-size: 30px;
-                line-height: 60px;
                 text-shadow: 1px -3px 0px #3F3E3E, 2px -4px 0px #3F3E3E, 1px -2px 0px #3F3E3E;
-            }
-            span.computer {
-                margin-left: 18px;
-            }
-            span.player {
-                margin-left: 20px;
             }
         }
         p {
